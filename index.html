@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="keywords" content="全网视频搜索引擎,视频搜,全网视频搜索,高清视频,在线视频">
+	<meta name="description" content="全网视频搜索引擎是一款全能影视搜索引擎，帮你找到最新影视资源，一站拥有无尽影视资源，涵盖全网海量视频资源，从搜索到观看的无缝衔接，悦享最具品质的视频搜索体验。">
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="white"/>
+<meta http-equiv = "X-UA-Compatible" content = "IE=edge" >  
+	<title>全网视频搜索引擎</title>
+	<link rel="search" type="application/opensearchdescription+xml" href="WuJiesou-CHS.xml" title="Search">
+	<link rel="stylesheet"  type="text/css" href="css.css">
+	<link rel="stylesheet" id="css" type="text/css" href="">
+	<script src="jquery.js" language="JavaScript"></script>
+	<script type="text/javascript" src="func.js"></script>
+	<script type="text/javascript" src="gb2312.js"></script>
+	<script type="text/javascript" src="search.js"></script>
+	<script type="text/javascript" src="search.lang.js"></script>
+	<script type="text/javascript" src="search.config.js"></script>
+    <script language="vbscript">
+	Function str2asc(strstr)
+		str2asc = hex(asc(strstr)) 
+	End Function 
+	Function asc2str(ascasc) 
+		asc2str = chr(ascasc) 
+	End Function
+
+</script>
+</head>
+<body>
+	<div class="searchtop"><div class="bg"></div><div class="nav"></div>
+			<div class="categories">
+				<span id="categories"></span><i class="more">更多</i>
+			</div>
+			</div>
+		
+		    <div class="menu"> <div class="bg"></div>
+			<div class="nav"></div> 
+			<div class="navs"><div>
+		<span id="btn_custom_prefer_wrapper">
+			<a href="javascript:;" id="btn_custom_prefer"  onclick="this.blur()" style="font-weight: bold;"></a>
+		</span><div style="display:none">
+	    <a href="javascript:;" id="btn_options" onclick="this.blur()"></a>
+		<a href="javascript:" id="btn_AddSearch" onclick="this.blur();"></a>
+		<a href="javascript:" id="btn_set_home" onclick="this.blur();"></a>
+		<a href="javascript:;" id="btn_add_fav" onclick="this.blur();"></a> </div>
+
+    </div></div></div>	 
+			
+	<div class="sbox2"><div class="sbox">
+	    <!--首页logo设置，第一个是白天模式的logo，第二个是夜间模式的logo，第三张图是手机版的白天模式logo-->
+	<div class="logo">
+		<a href="./">
+			<img src="57ae8aa83b7482b1a2497b8402c87078.png" alt="全网视频搜索引擎" border="0" class="pclogo skins">
+			<img src="1d7e83f5553810db008bdd4863078db5.png" alt="全网视频搜索引擎" border="0" class="pclogo skins2">
+			</a>
+			<img class="phonelogo skins" src="b46ba3500511c65406401b8bfa0504ed.png" alt="全网视频搜索引擎" border="0">
+	<img class="phonelogo skins2 " src="4b73998ffa11ba2887d66ae21932b0e9.png" alt="全网视频搜索引擎" border="0">
+	</div>
+		<div class="search">
+<!--			<div class="categories"><span id="categories"></span></div>-->
+			<div class="searchboxs">
+				<div style="display:inline-block;"><span class="stype">选择</span><input type="text" id="keyword" class="text searchBox" baidusug="2">
+<!--
+value="" onblur="$('kwh').style.display='none'" onkeyup="hint()" onmouseenter="this.select();this.focus()"
+-->
+				<button type="button" id="btn_go"> 搜 全 网</button><div id="kwhot"><!--百度热词--></div>
+				<span id="btn_history_wrapper"><a href="javascript:;" id="btn_history" onclick="this.blur()"></a>	<div id="history" class="history" style="position:absolute;visibility:hidden;"></div></span>
+				</div>
+		</div>
+
+       <!--     <div id="kwh"></div>-->
+		</div><div class="clear"></div>	
+		<div class="navPanel">
+		<div class="innerNavPanel">
+			<div class="buttons" id="searches">
+			<a href="#">初始化...</a>			</div>
+		</div>
+	</div>
+	</div>	</div>	
+			
+			
+
+
+  
+
+	<!-- history menu -->
+
+
+  <!-- nav -->
+
+  <!-- end nav -->
+
+	<!--<div class="shadowStrip">&nbsp;</div>-->
+
+  <!-- options wrapper -->
+
+	<div id="options" class="options" style="display:none;">
+
+		<div id="opt_sec_setup">
+
+			<h3><strong><span id="txt_options_header">Options</span></strong></h3>
+
+			<p>
+				<span id="txt_opt_lang">Interface Language</span>:
+				&nbsp;&nbsp;
+				<select id="opt_lang"></select>
+			</p>
+			<p><span id="txt_opt_save_history">Save Keyword History</span>: <select id="opt_save_history"></select> <span id="_counts">Items</span></p>
+			<p><span id="txt_opt_load_all">Load All Tables at Once</span>: <select id="opt_load_all"></select> <span id="_time">s</span></p>
+
+		</div>
+
+		<div id="opt_sec_list">
+
+			<h3><span id="txt_options_list">Customize Prefered Search List</span></h3>
+
+			<table width="100%" cellpadding="0" cellspacing="4" border="0" class="prefer-list">
+				<tr>
+					<td width="50%">
+						<span style="float:right;">
+							<a id="btn_list_default" href="javascript:;"><span id="txt_list_default">Restore Default</span></a>
+							&nbsp;&nbsp;
+							<a href="javascript:;" onclick="Search.options.list.moveItem(-1)"><img width="16" height="16" src="btn_up.png" id="img_list_up" alt="Move Up"></a>
+							<a href="javascript:;" onclick="Search.options.list.moveItem(1)"><img width="16" height="16" src="btn_down.png" id="img_list_Down" alt="Move Down"></a>
+						</span>
+						<strong id="txt_list_current_prefered">Current Prefered List</strong>
+					</td>
+					<td width="50%" align="right">
+						<span id="txt_list_add_text">Click to Add or</span><a id="btn_add_new" href="javascript:;"><span id="txt_list_i_new">Add Custom</span></a>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" valign="top"><div id="list_prefered" class="list-hot"></div></td>
+					<td width="50%" valign="top"><div id="list_all" class="list"></div></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+
+					<div id="opt_edit_table">
+					<table width="100%" cellpadding="8" cellspacing="0" border="0" class="list-edit-table">
+						<tr>
+							<td class="list-row-header"><span id="txt_list_i_name">Display Name</span>:</td>
+							<td>
+								<input id="i_name" type="text" value="" class="text" style="width:300px;">
+								&nbsp;
+								<span id="i_note_internal" class="comment">Can not delete internal item</span>
+								<span id="i_note_edit" class="comment">Use {keyword} in search string</span>
+							</td>
+						</tr>
+						<tr>
+							<td class="list-row-header"><span id="txt_list_i_url">Search URL</span>:</td>
+							<td><input id="i_url" type="text" value="" class="text" style="width:99%;"></td>
+						</tr>
+					  </table>
+					  </div>
+
+					</td>
+				</tr>
+			</table>
+
+		</div>
+
+
+		<p>
+			<input id="btn_opt_save" type="button" class="button" value=" Save ">
+			&nbsp;
+			<input id="btn_opt_cancel" type="button" class="button" value=" Cancel ">
+		</p>
+
+		<p>&nbsp;</p>
+
+	</div>
+
+  <!-- content wrapper -->
+	<div id="content"></div>
+
+  <!-- note wrapper -->
+    	<div id="note" class="note" style="display:none;"></div>
+
+
+
+<div id="Copyright" class="Copyright">
+	&copy;  2024&nbsp;<b><a target="_blank" class="TBLink" href="https://211611411.github.io/xgwlrj">轩哥软件合集</a></b> <a target="_blank" href="https://211611411.github.io/xgwlrj"></a></div>
+
+<!-- 全网视频搜索引擎 -->
+<div><a href="https://211611411.github.io/xgwlrj"><span style="visibility:hidden">垂直视频搜索引擎网站</span></a></div>
+
+<script type="text/javascript">
+<!--改变样式-->
+$(".cssnode").click(function(){
+$(this).toggleClass('hover');
+if($(".cssnode.hover").length>0){$("#css").attr('href','css/block.css');$cookies("set","css",'ok');$("body").addClass('skin2');}else{$("#css").attr('href','');$cookies("set","css",'');$("body").removeClass('skin2');}
+
+})
+if($cookies("get","css")=='ok'){$("#css").attr('href','css/block.css');$(".cssnode").toggleClass('hover');$("body").addClass('skin2');}
+
+
+function auto(tmp) {
+    //自适应触发函数
+    $(window).resize(function() {
+        return tmp();
+    });
+    return tmp();
+}
+Search.init();
+
+auto(function(){
+
+
+if($(window).width()<767){$("body").addClass('phone').removeClass('pc');}else{$("body").addClass('pc').removeClass('phone');}
+})
+var num=4;//左上角显示4个菜单
+num++;
+$(".categories a:nth-of-type(n+"+num+")").wrapAll("<span class='morenav'></span>");
+$(".searchtop .more").hover(function(){$(".searchtop").addClass('hover');})
+$(".searchtop").hover(function(){},function(){$(this).removeClass('hover')})
+
+$("#btn_go,.history a").click(function(){
+
+if($(window).width()<767){$(".sbox .navPanel #searches").removeClass('hover');}})
+
+
+$(".searchtop .nav,.menu .nav").click(function(){
+$(this).parent().toggleClass("hover");
+$(".history").css('visibility','hidden');
+})
+$(".menu a").click(function(){
+$(".menu").toggleClass("hover");
+
+})
+$(".menu .bg,.searchtop .bg").click(function(){
+$(this).parent().toggleClass("hover");
+
+})
+$(".searchtop a").click(function(){
+$(".searchtop").toggleClass("hover");
+
+})
+
+$(".sbox .stype").click(function(){
+if($(window).width()<767){
+$(".sbox .navPanel").toggleClass('hover')
+
+}
+})
+/*移动端鼠标离开搜索框，下拉搜索源隐藏*/
+$(".sbox .navPanel").parent().hover(function(){},function(){
+if($(window).width()<767){
+$(".sbox .navPanel").removeClass('hover')
+}
+})
+
+$("#keyword").click(function(){
+//if($(window).width()<=767){
+//$(".history").css('visibility','visible');//搜索记录隐藏
+//}
+if($.trim($(this).val())!=''){getHotkeyword($.trim($(this).val()))}
+
+})
+
+$("#keyword").keyup(function(e){
+if($.trim($(this).val())!=''){
+if(e.keyCode!=13){
+getHotkeyword($.trim($(this).val()))
+}else{
+$("#kwhot").hide();//回车热词隐藏
+}
+$(".history").css('visibility','hidden');
+if($(window).width()<767){
+$(".sbox .navPanel #searches").removeClass('hover')
+}
+}
+})
+
+
+$("#keyword").change(function(){
+if($.trim($(this).val())!=''){
+//$("#btn_go").trigger('click');//改变输入框内容，搜索
+if($(window).width()<767){
+$(".sbox .navPanel #searches").removeClass('hover')
+}
+}
+})
+
+$("body").click(function(){$("#kwhot").hide();})
+$(".searchboxs>div").hover(function(){},function(){$("#kwhot").hide()})
+
+
+/*百度热词*/
+function getHotkeyword(value) {
+var obj=$("#kwhot");
+$(obj).html('<ul></ul>')
+    $.ajax({
+        type: "GET",
+        url: "https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su",
+        async: true,
+        data: {
+            wd: value
+        },
+        dataType: "jsonp",
+        jsonp: "cb",
+        success: function (res) {
+            $(obj).find("ul").html("");
+            hotList = res.s.length;
+            if (hotList) {
+                $(obj).show();
+                for (var i = 0; i < hotList; i++) {
+                    $(obj).find("ul").append("<li><span>" + (
+                        i + 1
+                    ) + "</span>" + res.s[i] + "</li>");
+                    $(obj).find("ul li")
+                        .eq(i)
+                        .click(function () {
+                            $('#keyword').val(this.childNodes[1].nodeValue);
+							$(obj).hide();
+							$("#btn_go").trigger('click');
+                           // window.open(thisSearch + this.childNodes[1].nodeValue);
+                         
+                        });
+                    if (i === 0) {
+                        $(obj).find("ul li")
+                            .eq(i)
+                            .css({"border-top": "none"});
+                        $(obj).find(" ul span")
+                            .eq(i)
+                            .css({"color": "#fff", "background": "#f54545"})
+                    } else {
+                        if (i === 1) {
+                            $(obj).find(" ul span")
+                                .eq(i)
+                                .css({"color": "#fff", "background": "#ff8547"})
+                        } else {
+                            if (i === 2) {
+                                $(obj).find(" ul span")
+                                    .eq(i)
+                                    .css({"color": "#fff", "background": "#ffac38"})
+                            }
+                        }
+                    }
+                }
+            } else {
+                $(obj).hide();
+            }
+			
+        },
+        error: function (res) {
+            console.log(res)
+        }
+    })
+}
+</script>
+<!-- 安全标志 -->
+<!-- 
+
+<div id="cc-myssl-id" style="position: fixed;right: 0;bottom: 0;width: 65px;height: 65px;z-index: 99;">
+    <a  rel="nofollow" target="_blank"><img src="myssl-id.png" rel="nofollow" alt="" style="width:100%;height:100%"></a>
+</div>
+
+ -->
+<div style="display: none">
+
+    </div>
+</body>
+</html>
